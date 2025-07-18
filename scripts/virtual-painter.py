@@ -124,7 +124,6 @@ def main():
         cv2.putText(img, f'FPS: {int(fps)}', (10, 700), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
 
         cv2.imshow("Virtual Painter", img)
-        cv2.imshow("Canvas", canvas)
 
         key = cv2.waitKey(1)
         if key == 27:  # ESC
