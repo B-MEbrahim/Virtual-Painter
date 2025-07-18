@@ -65,13 +65,16 @@ class handDetector():
 
     def fingersUp(self):
         fingers = []
-        # Thumb
+        if len(self.lmList) == 0:
+            return [0, 0, 0, 0, 0]  # Return all down if nothing detected
+
+        # Thumb (left vs. right hand assumption)
         if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]:
             fingers.append(1)
         else:
             fingers.append(0)
 
-        # Fingers
+        # 4 Fingers
         for id in range(1, 5):
             if self.lmList[self.tipIds[id]][2] < self.lmList[self.tipIds[id] - 2][2]:
                 fingers.append(1)
@@ -79,6 +82,7 @@ class handDetector():
                 fingers.append(0)
 
         return fingers
+
 
     def findDistance(self, p1, p2, img, draw=True, r=15, t=3):
         x1, y1 = self.lmList[p1][1:]
@@ -106,7 +110,7 @@ def main():
         lmList, bbox = detector.findPosition(img)
         if len(lmList) != 0:
             print(lmList[4])
-
+        print("Fingers Up:", detector.fingersUp())
         cTime = time.time()
         fps = 1 / (cTime - pTime)
         pTime = cTime
