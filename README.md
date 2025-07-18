@@ -25,6 +25,9 @@ Real-time drawing with live webcam feed
 
 - Numpy
 
+*Install dependencies:*
+
+`pip install -r requirements.txt`
 ## Acknowledgements
 [MediaPipe](https://github.com/google-ai-edge/mediapipe) by Google for real-time hand tracking.
 
