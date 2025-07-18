@@ -74,7 +74,6 @@ def main():
         lm_list, _ = detector.findPosition(img, draw=False)
         
         if lm_list:
-            #print("Landmarks:", lm_list)  # Debug
             print(len(lm_list))
             if len(lm_list) >= 13:
                 x1, y1 = lm_list[8][1:]  # Index finger
