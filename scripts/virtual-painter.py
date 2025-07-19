@@ -74,13 +74,11 @@ def main():
         lm_list, _ = detector.findPosition(img, draw=False)
         
         if lm_list:
-            print(len(lm_list))
             if len(lm_list) >= 13:
                 x1, y1 = lm_list[8][1:]  # Index finger
                 x2, y2 = lm_list[12][1:]  # Middle finger
                 fingers_up = detector.fingersUp()
                 
-                print("Fingers Up:", fingers_up)
 
                 # Selection mode
                 if fingers_up[1] and fingers_up[2]:
