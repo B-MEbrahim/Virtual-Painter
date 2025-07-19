@@ -32,3 +32,8 @@ Real-time drawing with live webcam feed
 [MediaPipe](https://github.com/google-ai-edge/mediapipe) by Google for real-time hand tracking.
 
 [OpenCV](https://opencv.org/) for computer vision and image processing.
+
+# Team Members:
+- Mahmoud Ebrahim Ebrahim 
+- Ahmed Hamdy
+- Mohammed Ahmed Hussain
