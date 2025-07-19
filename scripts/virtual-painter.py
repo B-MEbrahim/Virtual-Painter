@@ -109,7 +109,7 @@ def main():
                     xp, yp = 0, 0  # Reset if fingers not in drawing mode
 
         # Simple merge using addWeighted for debug phase
-        img = cv2.addWeighted(img, 1, canvas, 1, 0)
+        img = cv2.addWeighted(img, 0.5, canvas, 1, 0)
 
         # Add header
         img[0:HEADER_HEIGHT, 0:610] = header
@@ -121,6 +121,7 @@ def main():
         cv2.putText(img, f'FPS: {int(fps)}', (10, 700), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
 
         cv2.imshow("Virtual Painter", img)
+
 
         key = cv2.waitKey(1)
         if key == 27:  # ESC
